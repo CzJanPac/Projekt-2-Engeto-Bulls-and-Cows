@@ -22,7 +22,6 @@ Let's play a Bulls and Cows game.""")
     ostatni_cisla = random.sample(ostatni, 3)
     tajne_cislo = str(prvni_cislo) + "".join(str(cislo) for cislo in ostatni_cisla)
     pocet_pokusu = 0
-
     cas_zacatek = time.perf_counter()
 
     while True:
