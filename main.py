@@ -4,6 +4,7 @@ main.py: druhý projekt do Engeto Online Python Akademie
 author: Jan Páč
 email: czjanpac@gmail.com
 """
+
 import random
 import time
 
@@ -21,11 +22,11 @@ Let's play a Bulls and Cows game.""")
     ostatni_cisla = random.sample(ostatni, 3)
     tajne_cislo = str(prvni_cislo) + "".join(str(cislo) for cislo in ostatni_cisla)
     pocet_pokusu = 0
-    print(tajne_cislo)
 
     cas_zacatek = time.perf_counter()
 
     while True:
+        print(oddelovac)
         hracovo_cislo = str(input("Enter a number: "))
         if (
             len(hracovo_cislo) != 4
@@ -53,7 +54,7 @@ Let's play a Bulls and Cows game.""")
             cow = "cow"
         elif cows != 1:
             cow = "cows"
-        print(f"{bulls} {bull}, {cows} {cow} \n{oddelovac} ")
+        print(f"{bulls} {bull}, {cows} {cow}")
 
         if bulls == 4:
             cas_konec = time.perf_counter()
