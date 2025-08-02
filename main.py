@@ -20,7 +20,8 @@ def vygeneruj_nahodne_cislo():
 
 def ziskej_vstup():
     while True:
-        hracovo_cislo = input("Enter a number: ")
+        print(oddelovac)
+        hracovo_cislo = input("Enter a 4-digit number: ")
         
         chyba = False
 
@@ -33,7 +34,7 @@ def ziskej_vstup():
             chyba = True
 
         elif len(set(hracovo_cislo)) != 4:
-            print("Digits must be unique – no duplicates allowed.")
+            print("All digits must be unique - no duplicates allowed.")
             chyba = True
 
         if hracovo_cislo and hracovo_cislo[0] == "0":
@@ -83,7 +84,6 @@ Let's play a Bulls and Cows game.""")
     cas_zacatek = time.perf_counter()
 
     while True:
-        print(oddelovac)
         hracovo_cislo = ziskej_vstup()
         pocet_pokusu += 1
         bulls, cows = vyhodnot_hadani(hracovo_cislo, tajne_cislo)
@@ -109,10 +109,13 @@ def main():
     while True:
         hra()
         while True:
-            hrat_znovu = input("Do you want to play again? (yes or no): ").strip().lower()
+            hrat_znovu = input("Do you want to play again? ('yes' or 'no'): ").strip().lower()
             if hrat_znovu in ("yes", "no"):
                 break
-            print("Answer yes or no, please:")
+            print("Please enter 'yes' or 'no':")
         if hrat_znovu == "no":
             vypis_statistiky()
             break
+
+if __name__ == "__main__":
+    main()
